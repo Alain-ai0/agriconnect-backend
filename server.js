@@ -27,3 +27,7 @@ app.use('/api/experts', expertRoutes);
 app.get('/', (req, res) => res.send('AgriConnect API is running'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.use(cors({
+  origin: process.env.CLIENT_URL || '*'
+}));
